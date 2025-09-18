@@ -1,0 +1,5 @@
+{
+  "name": "SVG Dot-to-Dot Generator",
+  "description": "An expert tool for vector graphics specialists. Upload an SVG file to parse its paths and shapes, generating an optimized list of 'dot-to-dot' coordinates. Features path simplification using the Ramer-Douglas-Peucker algorithm to minimize points while preserving geometry, perfect for reconstructing drawings.",
+  "requestFramePermissions": []
+}
