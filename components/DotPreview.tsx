@@ -16,7 +16,7 @@ type Shape = {
 const shapesToString = (shapes: Shape[]): string => {
     return shapes.map(shape => {
         if (shape.points.length === 0) return '';
-        return shape.points.map((p, i) => {
+        const pointsStr = shape.points.map((p, i) => {
             const isLastPoint = i === shape.points.length - 1;
             const x = parseFloat(p[0].toFixed(2));
             const y = parseFloat(p[1].toFixed(2));
@@ -25,6 +25,9 @@ const shapesToString = (shapes: Shape[]): string => {
             }
             return `[${x},${y}]`;
         }).join(',\n');
+        
+        if (!pointsStr) return '';
+        return `[\n${pointsStr}\n]`;
     }).filter(s => s).join('\n\n');
 };
 

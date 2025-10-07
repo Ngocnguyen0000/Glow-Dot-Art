@@ -338,7 +338,7 @@ export async function processSVG(svgText: string, epsilon: number, shouldResize:
                     }
                 }
                 
-                let coordsStr = finalPoints.map((p, i) => {
+                const pointsStr = finalPoints.map((p, i) => {
                     const isLastPoint = i === finalPoints.length - 1;
                     const x = parseFloat(p[0].toFixed(2));
                     const y = parseFloat(p[1].toFixed(2));
@@ -348,7 +348,9 @@ export async function processSVG(svgText: string, epsilon: number, shouldResize:
                     return `[${x},${y}]`;
                 }).join(',\n');
                 
-                allShapesCoords.push(coordsStr);
+                if (pointsStr) {
+                    allShapesCoords.push(`[\n${pointsStr}\n]`);
+                }
             });
         });
 

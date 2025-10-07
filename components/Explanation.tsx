@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Card: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
@@ -16,7 +15,13 @@ export const Explanation: React.FC = () => {
     const exampleSVG = `<svg width="100" height="100">
   <rect x="10" y="10" width="80" height="80" />
 </svg>`;
-    const exampleJSON = `[10,10], [90,10], [90,90], [10,90], [10,90,-1]`;
+    const exampleJSON = `[
+  [10,10],
+  [90,10],
+  [90,90],
+  [10,90],
+  [10,10,-1]
+]`;
 
     return (
         <div className="mt-8 p-6 bg-gray-900 border border-gray-700 rounded-xl space-y-6">
